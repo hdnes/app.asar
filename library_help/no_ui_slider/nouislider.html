@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>DJI样式库帮助文档</title>
+	<link rel="stylesheet" href="../../build/base.css">
+	<link rel="stylesheet" href="./nouislider.css">
+</head>
+<body>
+<div style="padding: 50px 0 0 50px;">
+	<div class="dji-slider" style="width: 500px">
+
+	</div>
+</div>
+
+<div style="padding: 50px 0 0 50px;">
+	<div class="dji-slider-minmax">
+		<div class="text-wrap">
+			<input type="text" class="dji-formtext">
+			<span>ms</span>
+		</div>
+		<div class="dji-slider" id="nouislider"></div>
+		<div class="text-wrap">
+			<input type="text" class="dji-formtext">
+			<span>ms</span>
+		</div>
+	</div>
+</div>
+
+<script src="./nouislider.js"></script>
+<script>
+	var sliderCreateObj = {
+		start: [20, 60],
+		step: 1,
+		connect: true,
+		behaviour: 'none',
+		range: {
+			'min': 0,
+			'max': 100
+		},
+		pips: {
+			mode: 'positions',
+			values: [0, 100],
+			density: 100,
+			stepped: true
+		}
+	}
+	noUiSlider.create(document.getElementById('nouislider'), sliderCreateObj)
+</script>
+</body>
+</html>

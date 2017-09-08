@@ -1,0 +1,11 @@
+/* Write your styles */
+
+.livevideo{
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	z-index: 9;
+}
+.livevideo object{
+	display: block;
+}

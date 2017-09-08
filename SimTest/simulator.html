@@ -1,0 +1,93 @@
+<html>
+<head>
+    <title>Simple DJI Simulator</title>
+    <style>
+        canvas {
+            width: 100%;
+            height: 100%
+        }
+
+        body {
+            margin: 0px;
+            font-family: Monospace;
+            background-color: #f0f0f0;
+            margin: 0px;
+            overflow: hidden;
+        }
+
+        ul {
+            margin: 2px;
+            padding-left: 2px;
+        }
+
+        button {
+            width: 80px;
+        }
+
+        div {
+            font-size: 12px
+        }
+
+        #view_main {
+            width: 100%;
+            height: 100%;
+        }
+
+        #view_atti {
+            width: 25%;
+            height: 25%;
+            position: absolute;
+            background: white;
+            bottom: 0;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+<script type="x-shader/x-vertex" id="vertexShader">
+    attribute vec3 center;
+    varying vec3 vCenter;
+    void main() {
+        vCenter = center;
+        gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+    }
+</script>
+<script type="x-shader/x-fragment" id="fragmentShader">
+    varying vec3 vCenter;
+    float edgeFactorTri() {
+        vec3 d = fwidth( vCenter.xyz );
+        vec3 a3 = smoothstep( vec3( 0.0 ), d * 1.5, vCenter.xyz );
+        return min( min( a3.x, a3.y ), a3.z );
+    }
+    void main() {
+        gl_FragColor.rgb = mix( vec3( 1.0 ), vec3( 0.2 ), edgeFactorTri() );
+        gl_FragColor.a = 1.0;
+    }
+</script>
+<script src="js/ws.js"></script>
+<script src="js/three.js"></script>
+<script src="js/OBJLoader.js"></script>
+<script src="js/DDSLoader.js"></script>
+<script src="js/MTLLoader.js"></script>
+<script src="js/OBJMTLLoader.js"></script>
+<script src="js/OrbitControls.js"></script>
+<script src="js/TransformControls.js"></script>
+<script src="js/Projector.js"></script>
+<script src="js/DragControls.js"></script>
+<script src="js/stats.min.js"></script>
+<script src="js/Bird.js"></script>
+<script src="js/simulator.js"></script>
+<div style="position: absolute; left: 10px; top: 10px;">
+    <ul><button id="sim-start">Start</button></ul>
+    <ul><button id="sim-stop">Stop</button></ul>
+    <ul><button id="clear-path">Clear</button></ul>
+    <ul><button id="find_aircraft">FindAircraft</button></ul>
+    <ul id="sim_status_val"></ul>
+</div>
+<div id="view_main">
+    <div id="view_atti"></div>
+</div>
+
+
+</body>
+</html>

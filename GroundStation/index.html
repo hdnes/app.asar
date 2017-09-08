@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>three.js webgl - geometry - catmull spline editor</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <style>
+        body {
+            font-family: Monospace;
+            background-color: #f0f0f0;
+            margin: 0px;
+            overflow: hidden;
+        }
+    </style>
+
+    <link rel="stylesheet" href="assets/css/amazeui.min.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body>
+
+<div id="doc-oc-demo2" class="am-offcanvas">
+    <div class="am-offcanvas-bar">
+        <div class="state-update">
+
+        </div>
+        <div class="event-update">
+
+        </div>
+    </div>
+</div>
+
+<div class="livevideo">
+    <object id="video-plugin" type="plugin/dji_live_video" width="384" height="216" title=""></object>
+</div>
+
+<script src="js/three.js"></script>
+
+<script src="js/DJIObject/Camera.js"></script>
+<script src="js/DJIObject/DJIMap.js"></script>
+<script src="js/DJIObject/Features.js"></script>
+<script src="js/DJIObject/JSON.js"></script>
+<script src="js/DJIObject/Mission.js"></script>
+<script src="js/DJIObject/OnboardSDK.js"></script>
+<script src="js/DJIObject/Path.js"></script>
+<script src="js/DJIObject/Recorder.js"></script>
+<script src="js/DJIObject/Status.js"></script>
+<script src="js/DJIObject/Template.js"></script>
+<script src="js/DJIObject/WayPoint.js"></script>
+<script src="js/DJIObject/WebSocket.js"></script>
+<script src="js/DJIObject/LiveVideo.js"></script>
+
+<script src="js/controls/OrbitControls.js"></script>
+<script src="js/controls/TransformControls.js"></script>
+<script src="js/controls/DragControls.js"></script>
+<script src="js/renderers/Projector.js"></script>
+<script src="js/loaders/OBJMTLLoader.js"></script>
+<script src="js/loaders/MTLLoader.js"></script>
+<script src="js/geometries/TextGeometry.js"></script>
+<script src="js/utils/FontUtils.js"></script>
+<script src="js/fonts/helvetiker_bold.typeface.js"></script>
+<script src="js/fonts/helvetiker_regular.typeface.js"></script>
+
+<script src="js/libs/stats.min.js"></script>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/amazeui.min.js"></script>
+
+<script>
+
+    String.prototype.format = function () {
+
+        var str = this;
+        for ( var i = 0; i < arguments.length; i ++ ) {
+
+            str = str.replace( '{' + i + '}', arguments[ i ] );
+
+        }
+        return str;
+
+    };
+
+    var map;
+    var container, states, options;
+    init();
+    animate();
+
+
+    function init() {
+
+        container = document.createElement('div');
+        document.body.appendChild(container);
+        map = new DJIMap(container);
+
+        //for the info on top middle
+        var info = document.createElement('div');
+        info.style.position = 'absolute';
+        info.style.top = '10px';
+        info.style.width = '100%';
+        info.style.textAlign = 'center';
+        info.innerHTML = 'DJI GroundStation';
+        options = document.createElement('div');
+        options.style.position = 'absolute';
+        options.style.top = '30px';
+        options.style.width = '100%';
+        options.style.textAlign = 'center';
+
+        options.innerHTML = 'Waypoints: <input type="button" onclick="addPoint();" value="+" />\
+        <input type="button" onclick="removePoint();" value="-" />\
+        <br>\
+        <button data-am-offcanvas="{target: \'#doc-oc-demo2\', effect: \'push\'}">Menu</button>\
+        <br>\
+        <input type="button" onclick="openGS(0);" value="Open Groundstation" />\
+        <input type="button" onclick="uploadMission(0);" value="Upload Mission" />\
+        <input type="button" onclick="startMission(0);" value="Start Mission" />';
+
+
+        container.appendChild(info);
+        container.appendChild(options);
+
+        stats = new Stats();
+        stats.domElement.style.position = 'absolute';
+        stats.domElement.style.top = '0px';
+        container.appendChild(stats.domElement);
+
+        map.mission[0].loadPoint([new THREE.Vector3(0, 0, 0),
+            new THREE.Vector3(289.76843686945404, 452.51481137238443, 56.10018915737797),
+            new THREE.Vector3(-53.56300074753207, 171.49711742836848, -14.495472686253045),
+            new THREE.Vector3(-91.40118730204415, 176.4306956436485, -6.958271935582161),
+            new THREE.Vector3(-383.785318791128, 491.1365363371675, 47.869296953772746)]);
+
+        //websocekt init
+
+        var init_socket = new WebSocket("ws://localhost:19870/general");
+
+        //There are three msg events when connecting, the first two from Assistant, the last one from A3, which has the 'file'
+        init_socket.onmessage = function (event) {
+            console.log(event.data);
+            var msg = JSON.parse(event.data);
+            var file = msg.FILE;
+            var device_type = msg.DEVICE_TYPE;
+            var event = msg.EVENT;
+            var product_type = msg.PRODUCT_TYPE;
+            var version = msg.VERSION;
+
+            if(typeof(file) != 'undefined') {
+                var my_socket = new WebSocket("ws://localhost:19870/controller/navigation/" + file);
+                map.mission[0].initWebSocket(my_socket);
+
+                (new LiveVideo("#video-plugin", file)).getVideo()
+            }
+        }
+    }
+
+    function openGS(index){
+        map.mission[index].openGS();
+    }
+
+    function uploadMission(index){
+        map.mission[index].uploadMission();
+    }
+
+    function startMission(index){
+        map.mission[index].startMission();
+    }
+
+    function addPoint() {
+        map.mission[0].addPoint();
+    }
+
+    function removePoint(){
+        map.mission[0].removePoint();
+    }
+    function animate() {
+
+        requestAnimationFrame( animate );
+        stats.update();
+        map.controlUpdate();
+        render();
+
+    }
+
+    function render() {
+
+        map.rendererUpdate();
+
+    }
+
+</script>
+
+
+</body>
+</html>

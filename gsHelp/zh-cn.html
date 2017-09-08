@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<title>DJI地面站 用户手册</title>
+
+
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="toc_0">DJI地面站 用户手册</h1>
+
+<h1 id="toc_1"></h1>
+
+<ul class="toc">
+<li>
+<a href="#toc_0">DJI地面站 用户手册</a>
+</li>
+<li>
+<a href="#toc_1"></a>
+<ul>
+<li>
+<a href="#toc_2">1. 什么是DJI地面站</a>
+</li>
+<li>
+<a href="#toc_3">2. 使用DJI地面站</a>
+</li>
+<li>
+<a href="#toc_4">3. 认识DJI地面站</a>
+</li>
+<li>
+<a href="#toc_5">4. 地图</a>
+<ul>
+<li>
+<a href="#toc_6">4.1 地图源</a>
+</li>
+<li>
+<a href="#toc_7">4.2 数据显示</a>
+</li>
+<li>
+<a href="#toc_8">4.3 地图操作</a>
+<ul>
+<li>
+<a href="#toc_9">4.3.1 位置搜索</a>
+</li>
+<li>
+<a href="#toc_10">4.3.2 地图类型</a>
+</li>
+<li>
+<a href="#toc_11">4.3.3 放大/缩小</a>
+</li>
+<li>
+<a href="#toc_12">4.3.4 返回初始位置</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_13">4.4 操作反馈</a>
+</li>
+<li>
+<a href="#toc_14">4.5 实时图传</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_15">5. 规划</a>
+<ul>
+<li>
+<a href="#toc_16">5.1 航线规划</a>
+<ul>
+<li>
+<a href="#toc_17">5.1.1 新建航线</a>
+</li>
+<li>
+<a href="#toc_18">5.1.2 打开航线</a>
+</li>
+<li>
+<a href="#toc_19">5.1.3 设置航线属性</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_20">5.2 航点操作</a>
+<ul>
+<li>
+<a href="#toc_21">5.2.1 新建航点</a>
+</li>
+<li>
+<a href="#toc_22">5.2.2 移动航点</a>
+</li>
+<li>
+<a href="#toc_23">5.2.3 选择航点</a>
+</li>
+<li>
+<a href="#toc_24"><em>5.2.4 设置航点属性</em></a>
+</li>
+<li>
+<a href="#toc_25">5.2.5 删除航点</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_26">5.3 使用模板</a>
+<ul>
+<li>
+<a href="#toc_27">5.3.1 圆形模板</a>
+</li>
+<li>
+<a href="#toc_28">5.3.2 矩形模板</a>
+</li>
+<li>
+<a href="#toc_29">5.3.3 测绘模板</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_30">5.4 上传和保存航线</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_31">6. 飞行</a>
+<ul>
+<li>
+<a href="#toc_32">6.1 上传航线</a>
+</li>
+<li>
+<a href="#toc_33">6.2 执行航线</a>
+</li>
+<li>
+<a href="#toc_34">6.3 编辑航线</a>
+</li>
+<li>
+<a href="#toc_35">6.4 控制飞行器</a>
+</li>
+<li>
+<a href="#toc_36">6.5 飞行器状态</a>
+</li>
+<li>
+<a href="#toc_37">6.6 断点续飞</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_38">7. 管理</a>
+</li>
+<li>
+<a href="#toc_39">8. Beta版已知问题</a>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<p><br><br></p>
+
+<h2 id="toc_2">1. 什么是DJI地面站</h2>
+
+<p>DJI地面站是DJI Assistant 2的一个重要组件，以下简称地面站。它不仅允许用户使用运行Windows系统的设备操作DJI飞行器，还增加了适合行业应用和多机操作的功能。用户可以预先规划航线并分配给多台飞行器，可以在地图上监控各个飞行器的航线执行状态，并可以随时进行控制。</p>
+
+<p>地面站在飞行和规划模块的功能都进行了全面升级，支持最新的DJI A3飞控平台、D-RTK和DATALINK-PRO。用户可以在模块之间自由切换。每个模块都有独立的界面和功能。此外用户还可以调整地面站系统的设置。</p>
+
+<p>地面站借助DJI强大的飞控平台和地面站协议，可以被广泛应用于航拍摄影、地图测绘、地质勘探、安防巡逻、灾害监测、气象探测、农业植保、线路设备巡检等方面。</p>
+
+<p><br><br></p>
+
+<h2 id="toc_3">2. 使用DJI地面站</h2>
+
+<p><strong>安装并使用地面站:</strong></p>
+
+<ol>
+<li>登录大疆创新官方网站，下载和安装最新版的DJI Assistant 2。</li>
+<li>使用DJI GO升级遥控器固件到最新版本。请登录大疆创新官方网站查看支持的遥控器类型。</li>
+<li>设置遥控器进入地面站模式：
+
+<ul>
+<li><strong>Phantom 4 遥控器:</strong> 开启遥控器，先同时按下遥控器底部的C1和C2按键，听到DD声后同时按 <strong>回放</strong> 键，松开所有按键。确保USB线已拔出后重启遥控器。遥控器重启后将切换到地面站模式。遥控器进入地面站模式后，遥控器的电源指示灯将慢闪。</li>
+<li><strong>LB 2 遥控器:</strong> 开启遥控器，先同时按下遥控器底部的C1和C2按键，听到DD声后同时按 <strong>拍照</strong> 键，松开所有按键，确保USB线已拔出后重启遥控器。遥控器重启后将切换到地面站模式。遥控器进入地面站模式后，遥控器的电源指示灯将慢闪。 </li>
+</ul></li>
+<li>使用DJI提供的双USB-A数据线连接遥控器和电脑的USB接口。</li>
+<li>确保遥控器和飞行器已经对频。</li>
+<li>确保遥控器的档位设置在F档。假如使用Phantom 4，请将档位设置在P档。</li>
+<li>打开DJI Assistant 2，选取 <strong>地面站</strong>，进入地面站。</li>
+</ol>
+
+<blockquote>
+<p><strong>注意</strong> </p>
+
+<ul>
+<li>飞行器进入地面站模式后，遥控器的部分功能可能会不能使用。比如在飞行器执行航线时，用户无法改变飞行器的高度以及使飞行器偏航。但是，部分航点参数允许用户使用遥控器调整飞行器的机头方向以及云台角度。</li>
+<li>用户可能也无法使用遥控器在飞行器执行航线时拍照和录影。但在航线完成执行后，用户可以使用遥控器控制飞行器。</li>
+</ul>
+</blockquote>
+
+<p><br>
+<strong>结束使用地面站:</strong></p>
+
+<ol>
+<li>如果需要继续使用遥控器和DJI GO连接，需要设置遥控器离开地面站模式。
+
+<ul>
+<li><strong>Phantom 4 遥控器:</strong> 开启遥控器，先同时按下遥控器底部的C1和C2按键，听到DD声后同时按 <strong>拍照</strong> 键，松开所有按键，确保USB线已拔出后重启遥控器。遥控器重启后将切换到App模式。App模式下，遥控器的电源指示灯不会慢闪。</li>
+<li><strong>LB 2 遥控器:</strong> 开启遥控器，先同时按下遥控器底部的C1和C2按键，听到DD声后同时按 <strong>回放</strong> 键，松开所有按键，确保USB线已拔出后重启遥控器。遥控器重启后将切换到App模式。App模式下，遥控器的电源指示灯不会慢闪。</li>
+</ul></li>
+<li>如果需要继续使用DJI Assistant 2，需要返回到系统首页。
+
+<ul>
+<li>点击左上角GS图标，可以返回到系统首页，选取 <strong>DJI Assistant2</strong>，进入DJI Assistant 2。</li>
+</ul></li>
+</ol>
+
+<p><br></p>
+
+<blockquote>
+<p><strong>特此说明:</strong> 地面站支持鼠标和触屏两种操作方式。本说明书以下部分将以鼠标版操作为例。</p>
+</blockquote>
+
+<p><br><br></p>
+
+<h2 id="toc_4">3. 认识DJI地面站</h2>
+
+<p>DJI地面站界面主要分为五个区域：顶部菜单栏、地图、底部状态栏、左侧工具栏和右侧属性栏。</p>
+
+<p>顶部菜单栏左侧包括<strong>规划</strong>和<strong>飞行</strong>两个选项，分别对应地面站最基本的两大模块。</p>
+
+<ul>
+<li><p>规划</p>
+
+<ul>
+<li>顶部菜单栏的右侧第一个是 <strong>+</strong> 图标，点击将新建航线</li>
+<li>顶部菜单栏的右侧第二个是航线库图标，点击将打开航线库，可以由此编辑已有航线或进行其他管理</li>
+</ul></li>
+<li><p>飞行</p>
+
+<ul>
+<li>顶部菜单栏的右侧是航线库图标：点击将打开航线库，可以由此上传已有航线到飞行器或进行其他管理</li>
+</ul></li>
+</ul>
+
+<p>地图是地面站操作和显示的主要区域，包括以下功能：</p>
+
+<ul>
+<li>显示飞行器和航点航线位置</li>
+<li>在规划模块下，新建、选择或移动航点</li>
+<li>在飞行模块下，选择飞机。</li>
+<li>操作地图：搜索位置、改变地图类型、放大缩小地图、移动地图、返回初始位置</li>
+</ul>
+
+<p>底部状态栏，包括以下功能：</p>
+
+<ul>
+<li>在规划模式下
+
+<ul>
+<li>打开航线属性</li>
+<li>同时选择多个航点</li>
+<li>全选或取消全选</li>
+<li>删除航点</li>
+<li>保存航线</li>
+<li>上传航线到飞行器</li>
+</ul></li>
+<li>在飞行模块下
+
+<ul>
+<li>同时选择多台飞行器</li>
+<li>全选或取消全选</li>
+<li>发出起飞命令</li>
+<li>发出返航命令</li>
+<li>返回规划界面</li>
+<li>开始或暂停执行航线或返航任务</li>
+</ul></li>
+</ul>
+
+<p>左侧工具栏，在规划模块下，提供新建航点或航线模板等工具。</p>
+
+<p>右侧属性栏，包括以下功能：</p>
+
+<ul>
+<li>在规划模块下，显示当前航点属性，包括：通用属性、位置调整、航点任务。</li>
+<li>在飞行模块下，显示当前飞行器的属性，包括：飞行状态、航线状态。</li>
+</ul>
+
+<p><br>
+接下来，跟随我们的用户手册，一起来看看该如何使用这些工具和按钮吧。</p>
+
+<p><br><br></p>
+
+<h2 id="toc_5">4. 地图</h2>
+
+<p>地图位于屏幕中心。在有需要时，提示或者警告会在其左侧浮现。假如有必须用户确认的操作，在地图中央会出现弹窗。航点和航线的实时数据显示在地图底部、当前航点的经纬度显示在顶部。地图操作栏在右侧上方、比例尺和地图源信息在右侧下方。</p>
+
+<h3 id="toc_6">4.1 地图源</h3>
+
+<p>DJI地面站会根据用户电脑的IP地址或飞行器GPS位置自动确定是使用Google Maps或者高德地图。比如，当打开地面站时用户连接了飞行器，飞行器获取的GPS信号显示用户在中国，地面站将选择高德地图作为地图源，否则使用Google Map。</p>
+
+<h3 id="toc_7">4.2 数据显示</h3>
+
+<p>在 <strong>规划</strong> 模块，点选任一航点，地图上方都会出现相应的该航点的经纬度。<br>
+在 <strong>飞行</strong> 模块，点选任一航点，地图上会出现航点信息的弹窗。<br>
+跟随地图的放大或缩小，比例尺会相应缩小或者放大。当地图缩小到一定级别后，部分航点和航线信息的显示将会被简化或隐藏。<br>
+地图最下方显示航线信息，主要包括：</p>
+
+<ul>
+<li>航线名</li>
+<li>总长度</li>
+<li>预估航行时间</li>
+<li>在 <strong>规划</strong> 模块，当前以使用航点数/总共可使用的航点数</li>
+<li>在 <strong>飞行</strong> 模块，当前以拍照数量/总共需要的拍照数量</li>
+</ul>
+
+<h3 id="toc_8">4.3 地图操作</h3>
+
+<p>点击地图右上侧的工具栏，可以进行位置搜索、更换地图类型、放大/缩小，以及返回初始位置等操作。</p>
+
+<p>地面站支持鼠标操作。比如使用鼠标中心滚轮进行放大或缩小地图，用鼠标单击地图的任意区域并拖动来移动地图。</p>
+
+<p>地面站也支持触屏操作。比如使用双指缩放来放大或缩小地图，点地图的任意区域并拖动来移动地图。</p>
+
+<h4 id="toc_9">4.3.1 位置搜索</h4>
+
+<p>点击 <strong>搜索</strong>，在弹出的搜索框输入地名或者经纬度后确定，地图会自动移动到该位置并以此作为地图中心。</p>
+
+<p>地面站会根据搜索位置自动判断是否更换使用地图源。比如用户在美国使用地面站，当搜索到一个中国的位置后，地图源将自动切换成高德地图。</p>
+
+<h4 id="toc_10">4.3.2 地图类型</h4>
+
+<p>地面站支持四种 <strong>地图类型</strong>：平面地图、地形地图、卫星地图和混合地图。</p>
+
+<h4 id="toc_11">4.3.3 放大/缩小</h4>
+
+<p>点击 <strong>放大</strong> 或 <strong>缩小</strong> 按钮可以放大缩小地图。</p>
+
+<h4 id="toc_12">4.3.4 返回初始位置</h4>
+
+<p>将地图拖动到其他位置后，点击 <strong>返回初始点</strong> 能把地图返回到拖动前的初始位置。</p>
+
+<ul>
+<li>在 <strong>规划</strong> 模块，地图的初始点为开始建立航点时的地图中心点。</li>
+<li>在 <strong>飞行</strong> 模块，地图的初始点为当前飞行器的位置。</li>
+</ul>
+
+<p><br></p>
+
+<h3 id="toc_13">4.4 操作反馈</h3>
+
+<p>地面站的操作反馈信息分为：提示、警告、错误。</p>
+
+<ul>
+<li><strong>提示</strong> 是地面站提供给用户的辅助信息，在地图左上角出现，一段时间后会自动消失。</li>
+<li><strong>警告</strong> 是地面站提供给用户的错误预警，在地图左上角出现，用户需要点击取消。</li>
+<li><strong>错误</strong> 是地面站提供给用户的严重警告，仅在操作失败或者飞行器有问题时才出现在地图中央。用户需要密切留意，并需要确认才会取消。</li>
+</ul>
+
+<h3 id="toc_14">4.5 实时图传</h3>
+
+<p>在 <strong>飞行</strong> 模块下，如果飞行器有相机，在地图右下角会出现实时图传的独立浮窗。</p>
+
+<p>点击实时图传浮窗，实时图传和地图将会互相切换，地图将缩小成浮窗，实时图传将放大至整个地图。</p>
+
+<p>拖动实时图传浮窗可以调整浮窗位置。点击并拖动浮窗的四个角可以调整浮窗大小。</p>
+
+<p>地图在浮窗内仍然支持鼠标和触屏的放大缩小操作，但不可以移动地图位置。</p>
+
+<p><br><br></p>
+
+<h2 id="toc_15">5. 规划</h2>
+
+<h3 id="toc_16">5.1 航线规划</h3>
+
+<h4 id="toc_17">5.1.1 新建航线</h4>
+
+<p>首次进入地面站会默认新建航线。</p>
+
+<p>用户可以随时点击顶部菜单栏右侧的** + **新建一条航线。 </p>
+
+<p>如果地图已有航点，此时会跳出提示弹窗，询问是否保存当前航线。</p>
+
+<h4 id="toc_18">5.1.2 打开航线</h4>
+
+<p>用户可以随时点击顶部菜单栏右侧的 <strong>航线库</strong> 图标，打开航线库弹窗。使用航线库弹窗左侧的航线列表选择要打开的航线，在弹窗右侧下方点击 <strong>编辑</strong> 图标，在地图上打开这条已有的航线。</p>
+
+<p>如果地图已有航点，此时会跳出提示弹窗，询问你是否保存当前航线。</p>
+
+<h4 id="toc_19">5.1.3 设置航线属性</h4>
+
+<p>点击底部状态栏最左侧的 <strong>信息</strong> 图标，可以打开航线属性弹窗。</p>
+
+<ul>
+<li><strong>航线名称：</strong> 用户可以修改航线名称。</li>
+<li><strong>飞行器类型：</strong> 用户可以为当前航线设置适用的机型。不同机型可以设置的航点参数会有区别。</li>
+<li><strong>通用速度：</strong> 航线的默认速度。所有新建航点都默认使用这个速度。</li>
+<li><strong>机头模式：</strong> 飞行器的机头方向默认跟随航线。用户选择 <strong>自定义</strong> 将打开航点右侧属性栏内的机头设置输入栏。</li>
+<li><strong>直线/协调转弯</strong>：用户可以根据需要，选择直线转弯模式或协调转弯模式。直线转弯模式下飞行器经过航点时将以直线经过；协调转弯模式下飞行器经过航点时将以弧形从航点内侧绕过。</li>
+<li><strong>航线结束后行为：</strong> 用户可以设置飞行器在完成执行航线后的行为。默认为悬停。</li>
+<li><strong>重复次数：</strong> 用户可以设置让航线重复执行多次。假如航线结束后行为设置为<strong>无尽模式</strong>，则这个选项不可设置。</li>
+</ul>
+
+<p>完成设置航线属性后，点击<strong>确认</strong>完成。</p>
+
+<p><br></p>
+
+<h3 id="toc_20">5.2 航点操作</h3>
+
+<h4 id="toc_21">5.2.1 新建航点</h4>
+
+<p>进入 <strong>规划</strong> 模块，地面站默认选择 <strong>新建航点</strong> 工具（对应左侧工具栏的第一个图标）。用户可以在地图中任一位置单击建立航点。每新建一个航点，地面站会自动建立与上一个航点的连线。该连线就是飞行器的航线。</p>
+
+<h4 id="toc_22">5.2.2 移动航点</h4>
+
+<p>在地图中点击任意航点并拖动可以移动该航点。</p>
+
+<h4 id="toc_23">5.2.3 选择航点</h4>
+
+<p>在地图中点击航点将进行 <strong>单点选择</strong>，点击的航点为当前选择航点。此时与上一个航点的距离会显示在该航段上，与上一个航点的航段与正北方向的夹角显示在上一个航点上。</p>
+
+<p>在底部状态栏点击航点将进行 <strong>多点选择</strong>，点击一个未被选择的航点将会选中这个航点，点击一个已经选中的航点将会取消选择这个航点。用户可以用 <strong>全选</strong> 按钮快速选择或取消选择所有航点。</p>
+
+<h4 id="toc_24"><em>5.2.4 设置航点属性</em></h4>
+
+<p>右侧属性栏显示当前选择航点的参数。用户可以进行相应设置。如果选择了多个航点，可以同时设置这些航点的参数。</p>
+
+<ul>
+<li><p><strong><em>航点属性</em></strong></p>
+
+<ul>
+<li>*<strong>高度</strong>：地面站的默认高度为40m。假如和上一个航点的高度不同，飞行器会平滑的从上一个航点的高度直线飞往这个航点的高度。飞控支持的最低高度为2m。</li>
+<li><strong>角度</strong>：当航线属性的机头模式设置为自定义时，用户可以设置机头与航段的顺时针角度。用户可以选择0°、90°、180°、270°以及自定义角度。</li>
+<li><strong>云台角度</strong>：指云台的俯仰角度。用户可以选择0°、45°、90°以及自定义角度。</li>
+</ul></li>
+<li><p><strong><em>航段属性</em></strong></p>
+
+<ul>
+<li><strong>速度</strong>：地面站的默认速度为4m/s。假如和上一个航点的速度不同，飞行器会平滑的从上一个航点的速度线性调整至这个航点的速度。飞控可支持的速度范围为2-15m/s。</li>
+<li>*<strong>自动拍照</strong>：用户可以设置在这一航点和下一航点之间自动定时定距拍照。定时拍照可选3s，5s，10s三种；若相机照片格式为JPEG；则建议选择3s；若照片格式RAW，则建议选择5s，若照片格式为JPEG+RAW，则建议选择10s。设置时间不匹配可能导致定时拍照不成功。定距拍照的最短距离为6m，若设置距离过短可能导致定距拍照不成功。若所设置的时间大于两点之间的飞行时间，或者所设置的距离大于两点之间的距离，则在两点间不进行拍照，只在起点时拍一张。*</li>
+</ul></li>
+<li><p><strong><em>航点动作</em></strong>：*用户可以在这里设置飞行器到达航点后需要完成的动作，包括：悬停、拍照、开始/停止录影、旋转、调整云台角度以及进行五向拍照。点击预览框下的 <strong>＋</strong> 号，可以进入 <strong>添加航点动作</strong> 模块。*</p>
+
+<ul>
+<li><strong>添加航点动作</strong>：选择 <strong>所有动作</strong> 下方的动作，点击其右侧 <strong>＋</strong> 可以添加到中间的 <strong>当前航点动作</strong>。你可以在 <strong>当前航点动作</strong> 下所包含的动作中，删除或调整动作顺序。</li>
+<li><strong>动作设置</strong> 在 <strong>添加航点动作</strong> 的右侧是动作设置，你可以对已选择的当前航点动作设置参数。</li>
+<li><strong>复制到下一个航点</strong>： 勾选该选项，可以将当前航点的航点动作复制到下一个新建的航点。</li>
+</ul></li>
+<li><p><strong>位置调整</strong></p>
+
+<ul>
+<li><strong>位置微调</strong>：用户可以通过点击上下左右四个按钮，对已有航点的位置进行微调。</li>
+<li><strong>经纬度调整</strong>： 用户可以输入航点的经纬度。</li>
+<li><strong>与前一航点距离</strong>：用户可以输入到上一点航点的距离。</li>
+<li><strong>与前一航点角度</strong>：用户可以输入与上一点航段与正北夹角的角度。</li>
+<li>
+&gt; <strong>注意</strong> 
+&gt; 
+&gt; - 飞行器系统只支持编辑最多16个航点动作。在上传航线时地面站会进行检查，超过会触发警告。 
+&gt; - 用户可以使用 <strong>五向拍照</strong> 动作进行测绘拍照。该动作能够快速设置飞行器拍摄5个方向（下，前，左，后，右）的照片以便后期合成3D地图。 这是一个组合动作，会占用9个航点动作。<br>
+&gt; - *由于在录影过程中无法拍照，当用户添加了 <strong>开始录影</strong> 动作后再添加 <strong>拍照</strong> 动作，会导致拍照动作无法执行。*
+&gt; - <em>两次</em><em>拍照</em><em>动作之间需要有一定时间间隔，两次拍照动作之间间隔5s以内可能导致拍照失败。</em></li>
+</ul></li>
+</ul>
+
+<h4 id="toc_25">5.2.5 删除航点</h4>
+
+<p>点击底部状态栏中的 <strong>删除</strong> 按钮，可以删除当前选择的航点。</p>
+
+<p><br></p>
+
+<h3 id="toc_26">5.3 使用模板</h3>
+
+<p>点击地图左侧的工具栏第二项，可以使用航线模板。地面站提供了三种模板：<strong>圆形模板</strong>、<strong>矩形模板*  *和</strong>测绘模板**。</p>
+
+<h4 id="toc_27">5.3.1 圆形模板</h4>
+
+<ul>
+<li><strong>使用圆形模板</strong>
+
+<ol>
+<li>点击圆形模板，然后在地图上点击，地面站会根据当前的参数生成一个圆形航线。这个航线处于设置状态，所以航点还不在底部状态栏上显示。</li>
+<li>圆形模板默认有8个航点，默认全部选中。如果地图上已有其他航点，圆形航线的起点会自动与上一个航点相连。</li>
+<li>在右侧属性栏中可以设置圆形模板的参数，包括 <strong>高度</strong>、<strong>半径</strong>、<strong>航点个数</strong> 和 <strong>顺/逆时针</strong> 的航线方向。另外，用户还可以使用 <strong>位置调整</strong> 以及 <strong>航点行为</strong> 来批量设置航线上的所有航点。</li>
+<li>拖动圆形航线的灰色外框，可以移动整个圆形航线。</li>
+<li>拖动圆形航线的灰色外框上的蓝点，可以调整圆形航线的半径。效果和设置右边属性栏内的半径参数一致。</li>
+<li>点击右侧属性栏上的确认按钮，将完成圆形航线的设置，航点将显示在底部状态栏。</li>
+<li>点击右边属性栏上的删除按钮，将会删除该航线。</li>
+</ol></li>
+</ul>
+
+<h4 id="toc_28">5.3.2 矩形模板</h4>
+
+<ul>
+<li><strong>使用矩形模板</strong>
+
+<ol>
+<li>点击矩形模板，然后在地图上点击，地面站会根据当前的参数生成一个矩形航线。这个航线处于设置状态，所以航点还不在底部状态栏上显示。</li>
+<li>矩形航线默认有4个航点，默认全部选中。如果地图中已有其他航点，矩形航线的起点会自动与上一个航点相连。</li>
+<li>在右侧属性栏中可以设置矩形模板的参数，包括 <strong>高度</strong>、<strong>长</strong>、<strong>宽</strong>、<strong>顺/逆时针</strong> 的航线方向以及 <strong>起点位置</strong>。另外，用户还可以使用 <strong>位置调整</strong> 以及 <strong>航点行为</strong> 来批量设置航线上的所有航点。</li>
+<li>拖动矩形航线的灰色外框，可以移动整个矩形航线。</li>
+<li>拖动矩形航线的灰色外框上的蓝点，可以调整矩形航线的长/宽。</li>
+<li>点击右边属性栏上的确认按钮，将完成矩形航线的设置，航点将显示在底部状态栏。</li>
+<li>点击右边属性栏上的删除按钮，将会删除该航线。</li>
+</ol></li>
+</ul>
+
+<h4 id="toc_29">5.3.3 测绘模板</h4>
+
+<ul>
+<li><strong>使用测绘模板</strong>
+
+<ol>
+<li>点击测绘模板，然后在地图上点击，地面站将根据当前的参数生成一个测绘航线。这个航线处于设置状态，所以航点还不在底部状态栏上显示。</li>
+<li>测绘航线的航点会默认全部选中。如果地图中已有其他航点，矩形航线的起点会自动与上一个航点相连。</li>
+<li>在右侧属性栏中可以设置测绘模板的参数，包括 <strong>高度</strong>、<strong>覆盖率</strong>、<strong>视角（对角线）</strong>、<strong>画幅比</strong>、<strong>起点位置</strong> 以及 <strong>航向方向</strong>。其中，<strong>覆盖率</strong> 分为横向和纵向，分别代表所拍摄照片在航线横线和纵向上的重合比例。<strong>视角（对角线）</strong> 是指相机传感器的对角线视角大小，通常可以在相机的规格参数内得到。地面站会根据以上参数自动计算每个航点之间的距离，并生成航线。</li>
+<li>地面站不会自动给航点增加拍照任务，用户需要到高级属性内设置。</li>
+<li>拖动测绘航线的灰色外框，可以移动整个测绘航线。</li>
+<li>拖动测绘航线的灰色外框的蓝点，可以调整测绘航线的长/宽，航线上的航点会增加或减少。假如航点数量达到总可设置的航点数量，测绘模板上的长/宽会自动调整。</li>
+<li>点击右边属性栏上的确认按钮，将完成矩形航线的设置，航点将显示在底部状态栏。</li>
+<li>点击右边属性栏上的删除按钮，将会删除该航线。</li>
+</ol></li>
+</ul>
+
+<p><br></p>
+
+<h3 id="toc_30">5.4 上传和保存航线</h3>
+
+<p>点击右下角的 <strong>上传</strong> 按钮，将会出现上传航线弹窗。在飞行器列表下拉框内选择已连接的飞机，点击上传，航线将被上传到飞行器。上传成功后，点击 <strong>准备飞行</strong> 按钮，地面站将切换到 <strong>飞行模块</strong>。点击 <strong>确认</strong> 按钮，上传航线弹窗会消失，用户可以继续规划现有航线。上传到飞行器的航线默认保存到航线库。用户可以取消默认的 <strong>保存</strong> 功能。</p>
+
+<p>点击右下角的 <strong>保存</strong> 按钮，将会出现保存航线弹窗。在飞行器类型列表下拉框内选择航线使用的飞行器类型，点击保存，航线将被保存到航线库。</p>
+
+<p><br><br></p>
+
+<h2 id="toc_31">6. 飞行</h2>
+
+<p>飞行模块是用户监控飞行器飞行和执行航线的模块。右侧属性栏会显示当前选择的飞行器状态、以及该飞行器的航线执行状态。底部状态栏显示当前接入地面站的所有飞行器。</p>
+
+<blockquote>
+<p><strong>注意</strong> 用户需要将飞行器设置进入地面站模式才能控制飞行器执行航线，请参考 <strong>第2章 使用DJI地面站</strong> 的设置办法。</p>
+</blockquote>
+
+<p>假如飞行器不在地面站模式，底部状态栏的飞行器按钮的左上角会出现遥控器图标。</p>
+
+<p>假如已经按照设置办法设置了飞行器，但底部状态栏的飞行器按钮上仍然显示遥控器图标，请退出地面站再进入。如果问题持续，请联系DJI技术支持。</p>
+
+<p><br></p>
+
+<p>地面站会自动下载飞行器上的航线并同步当前状态。假如飞行器已经上传了航线，地面站将会在地图上显示该飞机的航线和航点。假如飞行器在执行航线时电脑或者地面站软件发生故障，重新打开地面站（无论是否同一台电脑）时，地面站会自动同步和显示飞行器和航线的当前状态。</p>
+
+<p><br></p>
+
+<h3 id="toc_32">6.1 上传航线</h3>
+
+<p>如果接入地面站的飞行器没有航线，用户可以使用 <strong>航线库</strong> 上传航线。点击顶部菜单栏右侧的 <strong>航线库</strong> 图标，打开航线库弹窗。使用航线库弹窗左侧的航线列表选择要打开的航线，在弹窗右侧下方选择已经介入地面站的飞行器，点击 <strong>上传</strong> 图标。航线将被上传到飞行器，并显示在地图。</p>
+
+<blockquote>
+<p>*<strong>注意</strong> 由于飞控的限制，目前一次任务最多只能上传100个航点。如果用户规划了超过100个航点，地面站会自动将所有航点按照100个一段进行分段，一次只能上传一段，执行完一段之后再选择上传接下来的一段。*</p>
+</blockquote>
+
+<p><br></p>
+
+<h3 id="toc_33">6.2 执行航线</h3>
+
+<p>在底部状态栏选择飞行器，可以1台或多台（必须同一状态的飞行器才能被多选），点击底部状态栏最右侧的 <strong>开始</strong> 按钮，飞行器将开始执行航线。</p>
+
+<p>飞行器开始执行航线后，<strong>开始</strong> 按钮将变为 <strong>暂停</strong> 按钮，点击这个按钮将暂停执行航线。再点击 <strong>开始</strong> 按钮，航线将继续执行。</p>
+
+<blockquote>
+<p>*<strong>注意</strong> 飞行器到达第一个航点是先上升到第一个点的高度，再水平飞到第一个点。之后执行航点任务过程中，两航点高度不一样，会以水平速度和竖直速度叠加方式斜线飞往下一个点。*</p>
+</blockquote>
+
+<p><br></p>
+
+<h3 id="toc_34">6.3 编辑航线</h3>
+
+<p>用户可以随时编辑飞行器上的航线。点击底部状态栏右边的 <strong>编辑</strong> 按钮，地面站将返回规划模块，并将当前飞行器的航线显示在地图上。</p>
+
+<p>用户一次只能编辑一台飞行器的航线。</p>
+
+<p><br></p>
+
+<h3 id="toc_35">6.4 控制飞行器</h3>
+
+<p>用户可以使用底部状态栏的上升/下降、返航/取消按钮控制飞行器。</p>
+
+<blockquote>
+<p><strong><em>注意</em></strong> <em>飞行器起飞过程中因掰杆导致退出航线，需要重新上传航线。</em></p>
+
+<p><strong>注意</strong> 当飞行器在执行航线时，假如点击了下降或者返航按钮，飞行器将会停止执行并清除航线。</p>
+</blockquote>
+
+<p>假如遥控器档位被设置成F档（Phantom 4则是P档）以外的其他档位，飞行器会退出地面站模式，当前航线会被停止执行并清除。</p>
+
+<p><br></p>
+
+<h3 id="toc_36">6.5 飞行器状态</h3>
+
+<p>底部状态栏的飞行器按钮右上角的图标对应状态如下：</p>
+
+<ul>
+<li>起飞中</li>
+<li>飞行中（包括悬停）</li>
+<li>正在执行航线</li>
+<li>暂停执行航线</li>
+<li>返航中</li>
+<li>非地面站模式（遥控器可全权控制飞行器）</li>
+<li>下降中</li>
+<li>在地面</li>
+</ul>
+
+<p><br></p>
+
+<h3 id="toc_37">6.6 断点续飞</h3>
+
+<p><em>用户在飞行过程中遇到低电量返航或者其他情况触发的返航导致航线任务中断，或者用户切出P档手动控制无人机导致航线任务中断，或者其他情况导致航线任务中断时，可以选择继续执行先前的任务。用户可以选择飞往之前返回时的断点，或者飞往上一个航点，或者飞往下一个航点，或者飞往航线上的任意一个航点。</em></p>
+
+<p><br><br></p>
+
+<h2 id="toc_38">7. 管理</h2>
+
+<p>用户可以使用 <strong>航线库</strong> 管理在该台电脑规划过的航线。点击顶部菜单栏右侧的 <strong>航线库</strong> 图标，将弹出航线库弹窗。</p>
+
+<p>航线库弹窗左侧是航线列表，分别显示所有航信以及用户收藏了的航线。</p>
+
+<p>航线库弹窗右侧当前左侧选中的航线的具体信息，用户可以进行以下管理：</p>
+
+<ol>
+<li>编辑航线。点击 <strong>编辑</strong> 图标，在规划界面编辑当前航线。</li>
+<li>删除航线。点击 <strong>删除</strong> 图标，删除当前航线。</li>
+<li>收藏航线。点击 <strong>收藏</strong> 图标，将当前航线放入左侧的 <strong>收藏</strong> 列表中。</li>
+<li>导出航线。点击 <strong>导出</strong> 图标，将航线文件导出到电脑内的任意文件夹；</li>
+<li>上传航线。在飞行器列表下拉框内选择飞行器，点击 <strong>上传</strong> 按钮，将航线上传到飞行器。</li>
+</ol>
+
+<blockquote>
+<p><strong>注意</strong> 如果航线的飞行器类型与选择上传的飞行器不匹配，地面站会提示错误。</p>
+</blockquote>
+
+<p><br><br></p>
+
+<h2 id="toc_39">8. Beta版已知问题</h2>
+
+<ul>
+<li>不支持离线地图。如需到没有网络的地区使用地面站，请预先联网缓存地图，并不要关闭或刷新地面站页面；</li>
+<li>不支持飞行器飞行同时执行航点任务。比如当航点设置了拍照动作，飞行器将会先到达该航点后悬停，待拍照后再继续飞行；</li>
+<li>不支持模板旋转。所有航线模板都无法旋转；</li>
+<li>不支持多边形模板。</li>
+<li>不支持设置水平竖直以外的模板航线方向；</li>
+<li>不支持校验电池容量是否能完成航线；</li>
+<li>不支持校验航线高程数据，用户需要确保航线高度足以安全飞行；</li>
+<li>不支持飞行器和相机设置。请使用调参软件或DJI GO设置飞行器或相机参数；</li>
+<li>不支持相机回放；</li>
+<li>多选航点后，在地图拖动航点只能移动一个航点；</li>
+<li>一个航点无法上传超过16个航点动作</li>
+<li>安装32位系统的电脑暂时无法使用地面站</li>
+<li>M600用户无法选择LB或Ext单路视频流的输出</li>
+<li>航线库中删除航线时缺少确认页面</li>
+<li><em>加装HDMI模块的遥控器暂不能使用地面站</em></li>
+<li><em>M600飞行时电量暂不显示</em></li>
+<li><em>可以将航点拖动进入限飞区中并上传</em></li>
+<li><em>偶现云台朝向或角度图标残留</em></li>
+<li><em>偶现GPS定位有偏差</em></li>
+<li><em>偶现多机时无法上传航线</em></li>
+<li><em>偶现多机时无法识别新连接的飞行器</em></li>
+<li><em>多机上传不同航段时颜色显示有误</em></li>
+<li><em>在拍照动作之后加入开始录影动作，可能导致开始录影失败</em></li>
+<li><em>偶现使用模拟器执行地面站任务导致程序崩溃</em>
+<br><br></li>
+</ul>
+
+<blockquote>
+<p><strong><em>说明</em></strong>：<em>本说明书 5.2.4小节，6.1、 6.2、 6.4、6.6小节和第8小节有更新，用斜体标注表示。</em></p>
+</blockquote>
+
+
+
+
+</body>
+
+</html>

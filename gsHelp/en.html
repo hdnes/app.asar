@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<title>DJI Ground Station User Manual</title>
+
+
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="toc_0">DJI Ground Station User Manual</h1>
+
+<h1 id="toc_1"></h1>
+
+<ul class="toc">
+<li>
+<a href="#toc_0">DJI Ground Station User Manual</a>
+</li>
+<li>
+<a href="#toc_1"></a>
+<ul>
+<li>
+<a href="#toc_2">1. What is DJI Ground Station?</a>
+</li>
+<li>
+<a href="#toc_3">2. How to Use DJI Ground Station</a>
+</li>
+<li>
+<a href="#toc_4">3. Learn DJI Ground Station</a>
+</li>
+<li>
+<a href="#toc_5">4. Map Zone</a>
+<ul>
+<li>
+<a href="#toc_6">4.1 Map Source</a>
+</li>
+<li>
+<a href="#toc_7">4.2 Data Display</a>
+</li>
+<li>
+<a href="#toc_8">4.3 Map Tool</a>
+<ul>
+<li>
+<a href="#toc_9">4.3.1 Search</a>
+</li>
+<li>
+<a href="#toc_10">4.3.2 Map Type</a>
+</li>
+<li>
+<a href="#toc_11">4.3.3 Zoom In/Out</a>
+</li>
+<li>
+<a href="#toc_12">4.3.4 Back</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_13">4.4 Operation Feedback</a>
+</li>
+<li>
+<a href="#toc_14">4.5 Real-time Image Transmission</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_15">5. Plan</a>
+<ul>
+<li>
+<a href="#toc_16">5.1 Route Plan</a>
+<ul>
+<li>
+<a href="#toc_17">5.1.1 Create a New Route</a>
+</li>
+<li>
+<a href="#toc_18">5.1.2 Open a Route</a>
+</li>
+<li>
+<a href="#toc_19">5.1.3 Set a Route</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_20">5.2 Waypoint Action</a>
+<ul>
+<li>
+<a href="#toc_21">5.2.1 Create a New Waypoint</a>
+</li>
+<li>
+<a href="#toc_22">5.2.2 Move a Waypoint</a>
+</li>
+<li>
+<a href="#toc_23">5.2.3 Select a Waypoint</a>
+</li>
+<li>
+<a href="#toc_24">5.2.4 Set a Waypoint</a>
+</li>
+<li>
+<a href="#toc_25">5.2.5 Delete a Waypoint</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_26">5.3 Use a Template</a>
+<ul>
+<li>
+<a href="#toc_27">5.3.1 Circle Template</a>
+</li>
+<li>
+<a href="#toc_28">5.3.2 Rectangle Template</a>
+</li>
+<li>
+<a href="#toc_29">5.3.3 Survey Template</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_30">5.4 Upload and Save a Route</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_31">6. Flight</a>
+<ul>
+<li>
+<a href="#toc_32">6.1 Upload a Route</a>
+</li>
+<li>
+<a href="#toc_33">6.2 Execute a Route</a>
+</li>
+<li>
+<a href="#toc_35">6.4 Control the Aircraft</a>
+</li>
+<li>
+<a href="#toc_36">6.5 Aircraft Status</a>
+</li>
+<li>
+<a href="#toc_37">6.6 Continue Route From Breakpoint</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_38">7. Management</a>
+</li>
+<li>
+<a href="#toc_39">8. DJI Ground Station Beta Issues</a>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<p><br></p>
+
+<h2 id="toc_2">1. What is DJI Ground Station?</h2>
+
+<p>DJI Ground Station, hereinafter referred to as Ground Station, is one of the most important component of DJI Assistant. It allows you to manipulate DJI aircrafts with Windows devices. More, it also enables multi-aircraft handling and some industrial applications. You can preset some routes and then allocate to multiple aircrafts, and monitor and control the execution status of each route on screen.</p>
+
+<p>The brand new Ground Station comprehensively improves in Flight and Plan Module, with support for A3 Flight Controller System, D-RTK, and DATALINK-PRO. You can switch to different modules as you need, and each module has its independent interface and function. Additionally, you are also allowed to adjust Ground Station settings here. </p>
+
+<p>With its powerful flight controller system and Ground Station Protocol, the new Ground Station will be widely applied as prospected in a great many fields, including aerial photography, mapping, geoexploration, security patrols, disaster monitoring, meteorological detection，agricultural plant protection, and line overhauls.</p>
+
+<p><br><br></p>
+
+<h2 id="toc_3">2. How to Use DJI Ground Station</h2>
+
+<p><strong>Install and Use DJI Ground Station:</strong></p>
+
+<ol>
+<li>Visit DJI Website: http://www.dji.com/. Download and install the latest version of DJI Assistant 2.</li>
+<li>Update the Remote Controller firmware to the latest version with DJI GO, the official app of DJI. Visit DJI Website to check the matching type of Remote Controller.</li>
+<li>Set the Remote Controller to the Ground Station Mode. 
+
+<ul>
+<li><strong>Phantom 4 RC:</strong> Turn on the Remote controller, and then contemporarily press C1 and C2 Button on its back, after hearing a DD signal, press <strong>Playback</strong> Button at the same time. Remove the USB cable and restart the Remote Controller, the Ground Station Mode will be enabled.</li>
+<li><strong>LB 2 RC:</strong> Turn on the Remote controller, and then contemporarily press C1 and C2 Button on its back, after hearing a DD signal, press <strong>Shoot</strong> Button at the same time. Remove the USB cable and restart the Remote Controller, the Ground Station Mode will be enabled.</li>
+</ul></li>
+<li>Use a  Dual-USB-Ports cable independently provided by DJI to connect the Remote Controller and your computer.</li>
+<li>Ensure the linking between the Remote Controller and the aircraft.</li>
+<li>Open <strong>DJI Assistant 2</strong>，select  <strong>Ground Station</strong>. Then you can enter the DJI Ground Station.</li>
+</ol>
+
+<blockquote>
+<p><strong>Note</strong> </p>
+
+<ul>
+<li> Partial function of the remote controller may be disabled when the aircraft is in the Ground Station Mode. For instance, you cannot modify aircraft height and yaw value when executing a route. However, you are enabled to adjust the aircraft heading direction and gimbal angle with the remote controller after setting the value of related waypoints.</li>
+<li>You may not able to shoot a photo or record a video during route execution. After the route execution is completed, your control with the remote controller may be recovered.</li>
+</ul>
+</blockquote>
+
+<p><br>
+<strong>Exit DJI Ground Station：</strong></p>
+
+<ol>
+<li>Set remote controller to exit Ground Station if you need to continue using the remote controller and DJI GO.
+
+<ul>
+<li><strong>Phantom 4 RC:</strong> Turn on the remote controller, and contemporarily press C1 and C2 Button on its back, after hearing a DD signal, press <strong>Shoot</strong> Button at the same time. Remove the USB cable and restart the remote controller, and App Mode will be enabled.</li>
+<li><strong>LB 2 RC:</strong> Turn on the remote controller, and contemporarily press C1 and C2 Button on its back, after hearing a DD signal, press <strong>Playback</strong> Button at the same time. Remove the USB cable and restart the remote controller, and App Mode will be enabled.</li>
+</ul></li>
+<li>To continue your work in DJ Assistant 2, return to the homepage.
+
+<ul>
+<li>Click <strong>GS</strong> Icon on the top left corner to return to the homepage. Select <strong>DJI Assistant 2</strong>.</li>
+</ul></li>
+</ol>
+
+<p><br></p>
+
+<blockquote>
+<p><strong>For the avoidance of doubt</strong>: DJI Ground Station supports both mouse and touchscreen operation. In the following part of this manual mouse operation is taken as the example.  </p>
+</blockquote>
+
+<p><br><br></p>
+
+<h2 id="toc_4">3. Learn DJI Ground Station</h2>
+
+<p>Five sections compose the main view of DJI Ground Station: Top Menu Bar, Map Zone, Bottom Status Bar, Left Tool Bar, and Right Properties Bar. </p>
+
+<p>Top Menu has two Modules: Plan and Flight, respectively corresponding to two basic modules of the Ground Station.</p>
+
+<ul>
+<li><p>Plan</p>
+
+<ul>
+<li>The first icon on the right side of Top Menu Bar is <strong>+</strong>: Click to create a new route</li>
+<li>The second icon on the right side of Top Menu Bar is <strong>Route Manager</strong>: Click to open it, so that you can edit and manage existed routes.</li>
+<li>Left Tool Bar：Create a New Waypoint and Route Template</li>
+<li>Right Properties Bar: General Properties, Position Adjustment, and Advanced Properties</li>
+<li>Bottom Waypoint Bar：Current Route Properties, All Waypoints, Select All, Delete, Save, and Upload Route, etc.</li>
+</ul></li>
+<li><p>Flight</p>
+
+<ul>
+<li>The icon on the right side of Top Menu Bar is <strong>Route Manager</strong>：Click to open it, so that you can upload existed routes to aircrafts or perform management.</li>
+<li>Left Tool Bar：N/A</li>
+<li>Right Properties Bar: Aircraft Status and Route Status</li>
+<li>Bottom Status Bar：List of all connected aircrafts, select all, edit, and start flight.</li>
+</ul></li>
+</ul>
+
+<p>Map Zone, The main area for operation and display of Ground Station: </p>
+
+<ul>
+<li>Display the location of aircraft, route, and waypoints</li>
+<li>Create, select or move waypoints under <strong>Plan</strong> Module</li>
+<li>Select the aircraft under <strong>Flight</strong> Module</li>
+<li>Map Tool: search, change map types, zoom in/out, move the map, and return to the original location.</li>
+</ul>
+
+<p>Bottom Status Bar:</p>
+
+<ul>
+<li>In <strong>Plan</strong> Module
+
+<ul>
+<li>Open Route Properties</li>
+<li>Select multiple waypoints contemporarily</li>
+<li>Select All or Cancel Select All</li>
+<li>Delete Waypoints</li>
+<li>Save Waypoints</li>
+<li>Upload routes to the aircraft</li>
+</ul></li>
+<li>In <strong>Flight</strong> Module
+
+<ul>
+<li>Select multiple aircrafts contemporarily</li>
+<li>Select All or Cancel Select All</li>
+<li>Give Takeoff Command</li>
+<li>Give Return-to-Home Command</li>
+<li>Return to <strong>Plan</strong> View</li>
+<li>Start or suspend excuting route or performing Return-to-Home tasks</li>
+</ul></li>
+</ul>
+
+<p>Left Tool Bar: Create a new waypoint or route template (In <strong>Plan</strong> Module)</p>
+
+<p>Right Properties Bar:</p>
+
+<ul>
+<li>In <strong>Plan</strong> Module: Display the Properties of current waypoint, including general Properties, location adjust, and route task</li>
+<li>In <strong>Flight</strong> Module: Display the Properties of current aircraft, including flight status and route status</li>
+</ul>
+
+<p><br>
+Now follow me, to learn how to use these tools and buttons.
+<br><br></p>
+
+<h2 id="toc_5">4. Map Zone</h2>
+
+<p>Map Zone accounts for the central part of the screen. Notes and warnings may float on the left side of the map when necessary. If it must be confirmed, the popup will emerge in the center of Map Zone. The real-time data of both the route and waypoint is displayed on the bottom of the map, while the longitude and latitude value of the current waypoint is on the top. All map tools is listed on the upper right side, and the real-time scale and the map&#39;s source information is listed on the bottom right side.
+<br></p>
+
+<h3 id="toc_6">4.1 Map Source</h3>
+
+<p>DJI Ground Station automatically chooses Google Map or Amap according to PC&#39;s IP address or GPS Location. For instance, system chooses Amap as the map source when the GPS signal acquired by the aircraft is in China. Otherwise, Google Map will be chosen.</p>
+
+<p><br></p>
+
+<h3 id="toc_7">4.2 Data Display</h3>
+
+<p>In <strong>Plan</strong> Module, select any one waypoint. Its longitude and latitude will emerge on the map.</p>
+
+<p>In <strong>Flight</strong> Module, select any one waypoint. The popup of waypoint information will emerge on the map.</p>
+
+<p>With the map zoomed in/out, the scale will also zoomed out/in. When the map is zoomed in to a certain degree, information of some waypoints and routes will be simplified or hidden.</p>
+
+<p>The route information is displayed at the bottom of Map Zone, including:</p>
+
+<ul>
+<li>Route name</li>
+<li>Total length</li>
+<li>Estimated flight time</li>
+<li>Numbers of current used/total available waypoints (In <strong>Plan</strong> Module)</li>
+<li>Numbers of photos/totally needed photos (In <strong>Flight</strong> Module)</li>
+</ul>
+
+<p><br></p>
+
+<h3 id="toc_8">4.3 Map Tool</h3>
+
+<p>You can click on the map tools to do corresponding operations, including <strong>Search</strong>, <strong>Map Type</strong>, <strong>Zoom In/Out</strong>, and <strong>Back</strong>.</p>
+
+<p>DJI Ground Station allows both mouse- and touch-based operations. You can just use mousewheel or two fingers to zoom in and out the map, or click/tap and drag any point on the screen to move the map.</p>
+
+<h4 id="toc_9">4.3.1 Search</h4>
+
+<p>Click <strong>Search</strong>. A search box pops up. You can type in a place name or the longitude and latitude of the place, and then click <strong>OK</strong>. The map automatically moves where the place centering the map.</p>
+
+<p>Ground Station can automatically decide whether to change the map source according to the location you type in. For instance, If an American use is searching a place in China with this system, the map source will automatically change to Amap. </p>
+
+<h4 id="toc_10">4.3.2 Map Type</h4>
+
+<p>Four types of map are provided: Line Map, Terrain Map, Satellite Map, and Hybrid Map.</p>
+
+<h4 id="toc_11">4.3.3 Zoom In/Out</h4>
+
+<p>You can tap/click the icon to <strong>Zoom In</strong> 或 <strong>Zoom Out</strong> the map.</p>
+
+<h4 id="toc_12">4.3.4 Back</h4>
+
+<p>Wherever you are in the map, tap/click <strong>Back</strong> so that you can go back to the initial point.</p>
+
+<ul>
+<li>In <strong>Plan</strong> Module，the initial point is the central point where you start to create new waypoints on the map.</li>
+<li>In <strong>Flight</strong> Module, the initial point is the current location of the aircraft. </li>
+</ul>
+
+<p><br></p>
+
+<h3 id="toc_13">4.4 Operation Feedback</h3>
+
+<p>DJI Ground Station provides three types of operation feedbacks: Note, Warning, and Error.  </p>
+
+<ul>
+<li>Notes: Operation reference provided by Ground Station. It automatically disappears after few seconds.</li>
+<li>Warning: Pre-warnings provided by Ground Station. It disappears after you click <strong>Close</strong>.</li>
+<li>Error: Critical warnings provided by Ground Station. It simply pops up in the center of Map Zone when operation fails or aircraft are troubled with severe problems, requiring you to pay more attention. Likewise, it disappears after you click <strong>Close</strong>.</li>
+</ul>
+
+<p><br></p>
+
+<h3 id="toc_14">4.5 Real-time Image Transmission</h3>
+
+<p>In <strong>Flight</strong> Module, an independent window of Real-time Image Transmission will be floating in the lower right corner of Map Zone when the aircraft flies with a camera.</p>
+
+<p>Click the floating window, so that you can switch between two views of real-time transmission and Map Zone. The selected one will be zoomed out, filling the whole Map Zone. </p>
+
+<p>You can also drag the floating window to move it, or click and drag any one of its four corners to zoom in and out.</p>
+
+<p>When the map is in floating window, you can also use a mouse or fingers to zoom in and out. But the location cannot be moved.</p>
+
+<p><br><br></p>
+
+<h2 id="toc_15">5. Plan</h2>
+
+<h3 id="toc_16">5.1 Route Plan</h3>
+
+<h4 id="toc_17">5.1.1 Create a New Route</h4>
+
+<p>When you first enter Ground Station, system will create a new route by default.</p>
+
+<p>You can click <strong>+</strong> on the right side of Top Menu Bar to create a new route by default at any time.</p>
+
+<p>A window will pop up when existed waypoints are found in the map, asking you whether to save the current route or not.</p>
+
+<h4 id="toc_18">5.1.2 Open a Route</h4>
+
+<p>You can click <strong>Route Manager</strong> Icon on the right side of Top Menu Bar to open it. Then select and open the route you want from the route list on the left side of <strong>Route Manager</strong> Window. Click <strong>Edit</strong> Icon to open this existed route.</p>
+
+<p>A window will pop up when existed waypoints are found in the map, asking whether you will save the current route or not.</p>
+
+<h4 id="toc_19">5.1.3 Set a Route</h4>
+
+<p>Click the <strong>Info</strong> Icon in Bottom Status Bar to open the window of Route Properties.</p>
+
+<ul>
+<li><strong>Route Name</strong>：You can modify the route name here.</li>
+<li><strong>Aircraft Model</strong>：You can select proper aircraft based on the current route. Waypoint parameters may vary for different aircrafts.</li>
+<li><strong>General Speed</strong>：The default speed through the whole route. Each waypoint speed on the route are set to the value by default.</li>
+<li><strong>Turn Method</strong>：The Heading of aircraft is following the route by default. You can also select <strong>Customize</strong> to open the Right Properties Bar and type in your desired value.</li>
+<li>*<strong>Straight/Coordinated Turn</strong>：You can choose Straight or Coordinated Turn Mode based on your need. Straight refers to the mode that aircraft makes a turn in a linear track when passing the waypoint. Comparatively, Coordinated refers to the mode that aircraft makes a turn in a arc track along the inner rim when passing the waypoint.*</li>
+<li><strong>Route Complete Action</strong>：You can select the aircraft action after the route has been completed. <strong>No Action</strong> is set by default, meaning aircraft hovering.</li>
+<li><strong>Repeat Time</strong>：You can select how many times the route will be repeatedly executed. Of course, you cannot make choice if you have selected <strong>Continuous</strong> in <strong>Route Complete Action</strong>.</li>
+</ul>
+
+<p>Click <strong>OK</strong> when you finish setting the route.</p>
+
+<p><br></p>
+
+<h3 id="toc_20">5.2 Waypoint Action</h3>
+
+<h4 id="toc_21">5.2.1 Create a New Waypoint</h4>
+
+<p>In <strong>Plan</strong> Module, system will switch to the tool of <strong>Create a New Waypoint</strong> by default. You can create a waypoint in any place by just one click on the proper position of the map. Each waypoint will be automatically connected with its former one by a line. The line is named as wayline, also called as the wayline of the former waypoint.</p>
+
+<h4 id="toc_22">5.2.2 Move a Waypoint</h4>
+
+<p>You can click and drag any waypoint in Map Zone to move it.</p>
+
+<h4 id="toc_23">5.2.3 Select a Waypoint</h4>
+
+<p>You can click a waypoint to Enter <strong>Single Mode</strong>. The waypoint you select is the current waypoint. The distance between it and the previous one is displayed on the route, while the angle between the wayline and the north direction is also displayed on the previous waypoint.</p>
+
+<p>You can also enter <strong>Multiple Mode</strong> in the Bottom Status Bar. Select an unselected waypoint, or click a selected one to cancel selection. You can also click <strong>Select All</strong> to directly select all waypoints or cancel all selection.</p>
+
+<h4 id="toc_24">5.2.4 Set a Waypoint</h4>
+
+<p>All parameters of the current waypoint is displayed in Right Properties Bar, enabling you to make specific settings. When multiple waypoints are selected, you can set all contemporarily.</p>
+
+<ul>
+<li><p><strong><em>Waypoint Properties</em></strong></p>
+
+<ul>
+<li><p><strong>Height</strong>： The start point is 40m by default. The aircraft will smoothly fly to the next waypoint when the height is different. The lowest height supported by Main Controller is 2m.</p></li>
+<li><p><strong>Angle</strong>：The clockwise angle between the aircraft head and the wayline only when you customize the <strong>Turn Mode</strong> in <strong>Wayline Properties</strong>. You can choose 0°, 90°, 180°, or 270°, or customize the value.</p></li>
+<li><p><strong>Gimbal Tilt</strong>：The pitch angle of the gimbal. You can choose 0°, 45°, or 90°, or customize the value.</p></li>
+</ul></li>
+<li><p><strong><em>Wayline Properties</em></strong></p>
+
+<ul>
+<li><p><strong><em>Speed:</em></strong> It is 4m/s by default. The aircraft will smoothly fly to the next waypoint when the speed is different. The speed range supported by Main Controller is 2m/s to 15m/s.</p></li>
+<li><p><strong><em>Auto Shoot:</em></strong> <em>You can set auto time-fixed or distance-fixed shoot between two waypoints. You can choose 3s, 5s, or 10s for time interval. When the image format is JPEG, 3s is recommended. 5s is preferred when it is in Raw. If the format is JPEG+RAW, we suggest 10s. The minimum distance of Distance-fixed shoot is 6m, so that too small distance may lead to shoot failure. Auto Shoot will also fail between two waypoints when the time you set is longer than the flight time, or when the distance you set is larger than the that between the two. It only captures one photo at the beginning waypoint.</em></p></li>
+</ul></li>
+<li><p><strong><em>Waypoint Action</em></strong> </p>
+
+<p>You can select the action of the aircraft when it is in the waypoint, including <strong>Hover</strong>, <strong>Take Photo</strong>, <strong>Start/stop Recording</strong>, <strong>Pan Aircraft</strong>, <strong>Tilt Gimbal</strong>, and <strong>Qui-direction Shoot</strong>. You can click <strong>＋</strong> below to enter <strong>Add Waypoint Actions</strong> Module.</p>
+
+<ul>
+<li><p><strong>Add Waypoint Actions</strong>： Select actions below* *<strong>All Actions</strong>. Click <strong>＋</strong> on the right to add the action to <strong>Current Waypoint Actions</strong> in the middle. You can delete or reorder the actions under <strong>Current Waypoint Actions</strong>.</p></li>
+<li><p><strong>Action Settings</strong>: Just beside <strong>Add Waypoint Actions</strong>. You can make specific settings to current waypoint actions.</p></li>
+<li><p><strong>Duplicate to next Waypoint</strong>: Tick it to copy all the settings of the current waypoint to the next.*</p></li>
+</ul></li>
+<li><p><strong>Position Adjustment</strong></p>
+
+<ul>
+<li><strong>Position Tune</strong>：You can tune the waypoint finely by clicking the four icons (upper, lower, left, and right).</li>
+<li><strong>Latitude and Longitude</strong>： You can directly input the value in the box.</li>
+<li><strong>Distance From Prev. Waypoint</strong>：You can directly input the value in the box.</li>
+<li><strong>Angle From Prev. Waypoint</strong>：You can directly input the value in the box.</li>
+</ul></li>
+</ul>
+
+<blockquote>
+<p><strong>Note</strong> </p>
+
+<ul>
+<li>The system supports 16 actions for one waypoint at most, which will be automatically checked when you upload your route. Warning will be triggered if it exceeds 16. </li>
+<li>*You can use <strong>Qui-direction Shoot</strong> when surveying. It rapidly shoots from 5 directions (downward, forward, left, backward, and right), enabling to compose a 3D map later. As is a combined action, it accounts for 9 waypoint actions.*</li>
+<li>*When you add the action <strong>Take Photo</strong> after <strong>Start Recording</strong>, <strong>Stop Recording</strong> will be automatically added, which also accounts for one action.*</li>
+</ul>
+</blockquote>
+
+<h4 id="toc_25">5.2.5 Delete a Waypoint</h4>
+
+<p>You can click <strong>Delete</strong> to delete the waypoint in Bottom Status Bar.</p>
+
+<p><br></p>
+
+<h3 id="toc_26">5.3 Use a Template</h3>
+
+<p>You can choose template from the Left Tool Bar. Ground Station provides three default templates: <strong>Circle Template</strong>, <strong>Rectangle Template</strong>, and <strong>Survey Template</strong>. </p>
+
+<h4 id="toc_27">5.3.1 Circle Template</h4>
+
+<ul>
+<li><strong>How to use Circle Template</strong>
+
+<ol>
+<li>Click <strong>Circle</strong> Template. Then one click on Map Zone. A circle route based on the default settings emerges. As it is being set, its waypoints are not displayed in Bottom Status Bar.</li>
+<li>The template has 8 waypoints, and all are selected by default. If an existed waypoint has been in Map Zone before, it will link with the start point automatically.</li>
+<li>You can customize the settings in Right Properties Bar, including <strong>Radius</strong>, <strong>Height</strong>, <strong>Speed</strong>, <strong>Points Count</strong> and <strong>Clockwise/Anticlockwise</strong>. More, you can also go to <strong>Position Adjustment</strong> and <strong>Waypoint Actions</strong> to set all waypoints in batch.</li>
+<li>Drag the grey frame to move the whole route.</li>
+<li>Drag the blue points outside the grey frame to adjust its radius. It can also be set in Right Properties Bar.</li>
+<li>Click <strong>OK</strong> Button in Right Properties Bar to finish setting. Waypoints are displayed in Bottom Status Bar.</li>
+<li>Click <strong>Delete</strong> Button in Right Properties Bar to delete the route.</li>
+</ol></li>
+</ul>
+
+<h4 id="toc_28">5.3.2 Rectangle Template</h4>
+
+<ul>
+<li><strong>How to use Rectangle Template</strong>
+
+<ol>
+<li>Click <strong>Rectangle</strong> Template. Then one click on Map Zone. A rectangle route based on the default settings emerges. As it is being set, its waypoints are not displayed in Bottom Status Bar.</li>
+<li>The template has 4 waypoints, and all are selected by default. If an existed waypoint has been in Map Zone before, it will link with the start point automatically.</li>
+<li>You can customize the settings in Right Properties Bar, including <strong>Length</strong>, <strong>Height</strong>, <strong>Width</strong>, and <strong>Clockwise/Anticlockwise</strong>. More, you can also go to <strong>Position Adjustment</strong> and <strong>Waypoint Actions</strong> to set all waypoints in batch.</li>
+<li>Drag the grey frame to move the whole route.</li>
+<li>Drag the blue points outside the grey frame to adjust its length and width. It can also be set in Right Properties Bar.</li>
+<li>Click <strong>OK</strong> Button in Right Properties Bar to finish setting. Waypoints are displayed in Bottom Status Bar.</li>
+<li>Click <strong>Delete</strong> Button in Right Properties Bar to delete the route.</li>
+</ol></li>
+</ul>
+
+<h4 id="toc_29">5.3.3 Survey Template</h4>
+
+<ul>
+<li><p><strong>How to use Survey Template</strong></p>
+
+<ol>
+<li>Ckick <strong>Mapping Template</strong>. Draw a Rectangle Template on Map Zone. Then one click on Map Zone. A rectangle airline based on the default settings emerges. As it is being set, its waypoints are not displayed in Bottom Status Bar.</li>
+<li>All waypoints in the template are selected by default. If an existed waypoint has been in Map Zone before, it will link with the start point automatically.</li>
+<li>You can customize the settings in Right Properties Bar, including <strong>Height</strong>, <strong>Coverage Rate</strong>, <strong>FOV (Diagonal)</strong>, <strong>Aspect Ratio (Width)</strong>, <strong>Aspect Ratio (Length)</strong>, <strong>Starting Position</strong>, and <strong>Rourt Direction</strong>. Among all, <strong>Coverage Rate</strong> has two dimensions of landscape and portrait, respectively referring to the coverage rate of photo in horizontal and vertical directions. <strong>FOV (Diagonal)</strong> refers to the diagonal FOV of the camera sensor. Usually, it can be acquired in camera specifications. Ground Station can compute the distance between every two neighboring waypoints based on all these parameters, and finally generate the route.</li>
+<li>DJI Ground Station will not add <strong>Camera</strong> tasks to <strong>Waypoint Actions</strong>. You can set it in <strong>Advanced Properties</strong>.</li>
+<li>Drag the grey frame to move the whole route.</li>
+<li>Drag the blue points outside the grey frame to adjust its length and width, leading to the number of waypoints ever changing. When the number is up to the limit, the length and width of the template will be adjusted automatically.</li>
+<li>Click <strong>OK</strong> Button in Right Properties Bar to finish setting. Waypoints are displayed in Bottom Status Bar.</li>
+<li>Click <strong>Delete</strong> Button in Right Properties Bar to delete the route.</li>
+</ol></li>
+</ul>
+
+<h3 id="toc_30">5.4 Upload and Save a Route</h3>
+
+<p>Click <strong>Upload</strong> Button on the right bottom, and the window of <strong>Upload a Route</strong> pops up. Select the connected aircrafts in pull-down menu of aircraft list, and then click <strong>Upload</strong> to upload the route to the aircraft. Click <strong>Prepare to Fly</strong> Button, and the system is switched into <strong>Flight</strong> Module. Click <strong>OK</strong>, and the window disappears, enabling you to continue planning the existing routes. All routes that have been uploaded to the aircraft are saved into <strong>Route Manager</strong>. You can manually cancel the function. Click <strong>Save</strong> in the right bottom. A window of saving route pops up. Select your aircraft type from the combobox of type list. Click∘<strong>Save</strong>∘, and the route will be saved to∘<strong>Route Manager</strong>∘.</p>
+
+<p><br><br></p>
+
+<h2 id="toc_31">6. Flight</h2>
+
+<p><strong>Flight</strong> Module enables you to monitor aircrafts and execute routes. Aircraft status and route execution will be displayed in Right Properties Bar, while all connected aircrafts are in Bottom Status Bar.</p>
+
+<blockquote>
+<p><strong>Note</strong>
+You can manipulate your aircraft to execute the route only when in Ground Station. Refer to Chapter 2 to learn how to set.</p>
+</blockquote>
+
+<p>If the aircraft is not in Ground Station, the button in Bottom Status Bar will turn to Remote Controller Icon.</p>
+
+<p>If you are in Ground Station with the Remote Controller Icon exiting still, exit and reenter please. If the problem persists, contact DJI Support.</p>
+
+<p>Ground Station will automatically download the route in the aircraft and sync the current status. If the aircraft has upload the route, its route with waypoints will be displayed in Map Zone. When accidents or errors occur to the aircraft or Ground Station, just re-open Ground System (whether the same PC or not), aircraft and route status will still be synced.</p>
+
+<p><br></p>
+
+<h3 id="toc_32">6.1 Upload a Route</h3>
+
+<p>You can upload routes in <strong>Route Manager</strong> when the connected aircraft has no route inside. Click <strong>Route Manager</strong> Icon on the right side of the Top Menu Bar to open it. Select the route you need from the route list on the left column, and choose the connected aircraft on the bottom right. Click <strong>Upload</strong> Icon to upload the route to the aircraft and display it on Map Zone at the same time.</p>
+
+<blockquote>
+<p>*<strong>Note</strong> Limited by flight controller, at most 100 waypoints can be uploaded in one task. If you have planned over 100, Ground Station will segment all these waypoints, leaving every 100 waypoints for one section. You can only upload the sections one by one.*</p>
+</blockquote>
+
+<p><br></p>
+
+<h3 id="toc_33">6.2 Execute a Route</h3>
+
+<p>You can select one or more aircrafts (which must be in the same status) in Bottom Status Bar. Click <strong>Start</strong> Button on the right side of Bottom Status Bar, and the aircraft will start executing the route.</p>
+
+<p>During the execution, <strong>Start</strong> Button is changed into <strong>Pause</strong> Button. You can switch between the two operations by click.</p>
+
+<blockquote>
+<p><strong>Note</strong> </p>
+
+<p><em>Aircraft will ascend to its height, and then fly to the first waypoint horizontally. Aircraft will directly fly to the next waypoint along the straight line between the two.</em>
+<br></p>
+
+<h3 id="toc_34">6.3 Edit a Route</h3>
+</blockquote>
+
+<p>You can edit the route in the aircraft at any time. Click <strong>Edit</strong> Button in Bottom Status Bar, system will go back to <strong>Plan</strong> Module, and display the route of the current aircraft on Map Zone.</p>
+
+<p>You can only edit the route of one aircraft in one time.</p>
+
+<p><br></p>
+
+<h3 id="toc_35">6.4 Control the Aircraft</h3>
+
+<p>You can use the <strong>Up/Down</strong> and <strong>Return-to-Home/Cancel</strong> Button in Bottom Status Bar to control the aircraft.</p>
+
+<blockquote>
+<p><strong><em>Note</em></strong> <em>Aircraft will automatically exit the route when you move sticks in takeoff. You are required to re-upload the route.</em></p>
+
+<p><strong>Note</strong>
+When aircraft is executing a route, you can control the aircraft to stop execution and clear the route by clicking <strong>Down</strong> or <strong>Return-to-Home</strong> Button.</p>
+</blockquote>
+
+<p>When the Remote Controller is set in other Mode, aircraft will exit Ground Station, with the execution stopped and route cleared.</p>
+
+<h3 id="toc_36">6.5 Aircraft Status</h3>
+
+<p>In the Bottom Status Bar, the status icon on the top right corner of aircraft button is: </p>
+
+<ul>
+<li>Taking off</li>
+<li>Flying（Including Hovering）</li>
+<li>Executing a route</li>
+<li>Execution paused</li>
+<li>Returning-to-Home</li>
+<li>Non-GS Mode（The remote controller can thoroughly control the aircraft）</li>
+<li>Descending</li>
+<li>On the ground</li>
+</ul>
+
+<h3 id="toc_37">6.6 Continue Route From Breakpoint</h3>
+
+<p><em>Route execution may be brkoen off in several conditions, such as RTH under all circumstances, exiting from P-mode to manually control the aircraft, and so on. You can select to fly to the breakpoint or any waypoint on the route to continue.</em></p>
+
+<p><br><br></p>
+
+<h2 id="toc_38">7. Management</h2>
+
+<p>You can use <strong>Route Manager</strong> to manage the route planned in this PC. Click <strong>Route Manager</strong> Icon, and its window pops up.</p>
+
+<p>The left column is the route list, displaying all routes and your favorite routes.</p>
+
+<p>The right column displays the specific information of the route that is selected in the left. You can do the following operations: </p>
+
+<ol>
+<li>Edit a route. Click <strong>Edit</strong> to edit the route in <strong>Plan</strong> Interface.</li>
+<li>Delete a route. Click <strong>Delete</strong> to delete the current route.</li>
+<li>Favor a route. Click <strong>Favorite</strong> to save the route to the <strong>Favorite</strong> in the left column.</li>
+<li>Export a route. Click <strong>Export</strong> Icon to export the route to any folder.</li>
+<li><p>Upload a route. Select an aircraft in the list below. Click <strong>Upload</strong> to upload the route to the aircraft. </p>
+
+<blockquote>
+<p><strong>Note</strong>: When the chosen route and aircraft are incompatible, system will pop up a warning.</p>
+</blockquote></li>
+</ol>
+
+<p><br><br></p>
+
+<h2 id="toc_39">8. DJI Ground Station Beta Issues</h2>
+
+<ul>
+<li>No offline map support. If you plan to use Ground Station in an area without network connectivity, open the map in advance then do not close or restart Ground Station.</li>
+<li>No support for simultaneous aircraft flight and waypoint action. For instance, if you set “Take Photo” at a waypoint, the aircraft will fly to the waypoint, hover to take a photo, and then continue its flight.</li>
+<li>Template cannot be rotated. </li>
+<li>Polygonal templates not supported.</li>
+<li>Waypoint templates are only available in landscape and portrait orientation.</li>
+<li>No support for checking whether battery capacity is sufficient to complete the selected route. </li>
+<li>Route height cannot be checked. Pay attention to aircraft hight during flight to ensure safe flight.</li>
+<li>No support for adjusting aircraft or camera parameters. You can go to DJI Assistant 2 or DJI GO to set.</li>
+<li>No support for Camera Replay.</li>
+<li>Only one waypoint can be moved at a time, even when multiple waypoints are selected.</li>
+<li>Failed to upload over 16 actions to one waypoint.</li>
+<li>Failed to use DJI Ground Station in computers with 32-bit system.</li>
+<li>Failed to select single video streaming (LB or Ext) for M600 users.</li>
+<li><em>No Confirm page when deleting route in Route Manager.</em></li>
+<li><em>Failed to use the remote controller installed with HDMI Module in Ground Station.</em></li>
+<li><em>Failed to display battery info in flight for M600 users.</em></li>
+<li><em>Waypoints can be dragged into NFZ and uploaded.</em></li>
+<li><em>Occacionally appears remained icons of gimbal heading or tilt.</em> </li>
+<li><em>Occacionally appears GPS positioning deviation.</em></li>
+<li><em>Occacionally failed to upload route when controlling multiple aircrafts.</em></li>
+<li><em>Occacionally failed to identify newly connected aircraft when controlling multiple aircrafts.</em></li>
+<li><em>Failed to display proper wayline colour when uploading waylines to multiple aircrafts.</em></li>
+<li><em>Occacionally failed to Record a video when you Start Recording after Take Photo.</em></li>
+<li><em>Rarely crashed when you are executing tasks in Ground Station with Simulator.</em></li>
+</ul>
+
+<blockquote>
+<p><strong><em>Instruction</em></strong> <em>Updates are provided in Section 5.2.4, Section 6.1, 6.2, 6.4, 6.6 and Chapter 8, and will be displayed in Italic style.</em></p>
+</blockquote>
+
+
+
+
+</body>
+
+</html>

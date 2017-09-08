@@ -1,0 +1,30 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 489 175.66667">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3 {
+        fill: none;
+        stroke-linecap: square;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-1, .cls-2 {
+        stroke: #b7b7b7;
+      }
+
+      .cls-2 {
+        stroke-dasharray: 4 4;
+      }
+
+      .cls-3 {
+        stroke: #00c8ff;
+      }
+    </style>
+  </defs>
+  <title>DJI_A3_ESC_0612</title>
+  <line class="cls-1" x1="3" y1="3" x2="3" y2="171"/>
+  <line class="cls-1" x1="486" y1="89.00563" x2="3" y2="89.00563"/>
+  <polyline class="cls-2" points="476.5 87.797 476.5 6.642 238.5 6.642 238.5 88.558"/>
+  <polyline class="cls-2" points="32.5 91.294 32.5 167.677 238.5 167.677 238.5 90.408"/>
+  <polyline class="cls-3" points="233.5 89.006 269.842 89.006 269.842 76.053 476.5 7.583"/>
+  <polyline class="cls-3" points="238.5 89.006 207.691 89.006 207.691 101.376 32.5 166.769"/>
+</svg>
