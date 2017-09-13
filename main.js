@@ -25,7 +25,7 @@ var getRouteURL = function(url){
 // be closed automatically when the JavaScript object is garbage collected.
 var mainWindow = null
 var locale = 'en'
-var debug = process.argv[2]=='debug'?true:false
+var debug = true
 
 // Functions
 var onCloseEvent = function(event){
@@ -114,7 +114,7 @@ app.on('ready', function(){
 		mainWindow.loadURL('file://' + __dirname + '/index.html#/debug/0')
 	}
 	// Open the DevTools.
-	// mainWindow.webContents.openDevTools()
+	mainWindow.webContents.openDevTools()
 
 	mainWindow.on('close', onCloseEvent)
 
@@ -211,10 +211,9 @@ ipcMain.on('asynchronous-message', function(event, arg){
 ipcMain.on('set-locale', function(event, arg){
 	locale = arg
 })
-
 ipcMain.on('open-devtools', function(event, arg){
 	console.log('receive open-devtools event:',arg);
 	if(!!arg){
-		mainWindow.webContents.closeDevTools();
+		//mainWindow.webContents.closeDevTools();
 	}
 })
